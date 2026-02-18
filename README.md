@@ -1,5 +1,2 @@
 # portfolio
-This is the first time of using a portfolio.
-hello world
-
-line added
+This is my portfolio about ULAB Career.
