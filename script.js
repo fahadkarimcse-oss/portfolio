@@ -1,3 +1,11 @@
+// Preloader logic
+window.addEventListener('load', () => {
+    const loader = document.getElementById('loader');
+    setTimeout(() => {
+        loader.classList.add('loader-hide');
+    }, 2000); // Increased to 2s to allow the name animation to finish
+});
+
 // Smooth scroll for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -8,15 +16,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Navbar scroll background change
+// Navbar scroll class toggle
 const nav = document.querySelector('nav');
 window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
-        nav.style.background = 'rgba(15, 23, 42, 0.95)';
-        nav.style.boxShadow = '0 10px 30px rgba(0,0,0,0.5)';
+        nav.classList.add('scroll');
     } else {
-        nav.style.background = 'rgba(15, 23, 42, 0.8)';
-        nav.style.boxShadow = 'none';
+        nav.classList.remove('scroll');
     }
 });
 
@@ -55,5 +61,5 @@ function typeWriter() {
     }
 }
 
-// Start typewriter after a small delay
-setTimeout(typeWriter, 1000);
+// Start typewriter after a small delay (allowing for loader fade out)
+setTimeout(typeWriter, 2500);

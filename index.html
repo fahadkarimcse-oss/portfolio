@@ -12,6 +12,24 @@
 </head>
 
 <body>
+    <div id="loader">
+        <div class="loader-content">
+            <div class="loader-name">
+                <span style="--i:1">F</span>
+                <span style="--i:2">A</span>
+                <span style="--i:3">H</span>
+                <span style="--i:4">A</span>
+                <span style="--i:5">D</span>
+                <span style="margin-left: 10px;"></span>
+                <span style="--i:6">K</span>
+                <span style="--i:7">A</span>
+                <span style="--i:8">R</span>
+                <span style="--i:9">I</span>
+                <span style="--i:10">M</span>
+            </div>
+            <div class="loader-bar"></div>
+        </div>
+    </div>
     <nav>
         <div class="container">
             <a href="#" class="logo">FAHAD<span>KARIM.</span></a>
@@ -26,12 +44,19 @@
     </nav>
 
     <header id="hero">
-        <div class="hero-content">
-            <h1>Hi, I'm Fahad Karim</h1>
-            <p>Computer Science Student @ ULAB | Freelance Full-Stack Developer</p>
-            <div class="hero-btns">
-                <a href="#projects" class="btn btn-primary">View My Work</a>
-                <a href="#contact" class="btn" style="border: 1px solid var(--primary-color);">Get In Touch</a>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <p>Hi, I am</p>
+                <h1>Fahad Karim</h1>
+                <h2>Full-Stack Developer</h2>
+                <div class="hero-btns">
+                    <a href="#contact" class="btn btn-primary">Hire Me</a>
+                    <a href="#" class="btn btn-outline" style="margin-left: 1rem;">Download CV</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-image-backdrop"></div>
+                <img src="assets/images/image.png" alt="Fahad Karim">
             </div>
         </div>
     </header>
@@ -55,7 +80,7 @@
                     </div>
                     <div class="stat-card"
                         style="background: var(--card-bg); padding: 2rem; border-radius: 20px; text-align: center;">
-                        <h3 style="color: var(--secondary-color); font-size: 2rem;">10+</h3>
+                        <h3 style="color: var(--secondary-color); font-size: 2rem;">3+</h3>
                         <p>Projects Done</p>
                     </div>
                 </div>
@@ -63,26 +88,33 @@
         </div>
     </section>
 
-    <section id="education" style="padding: 8rem 0; background: rgba(30, 41, 59, 0.2);">
+    <section id="education">
         <div class="container">
             <h2 class="section-title">Education & Experience</h2>
             <div style="max-width: 800px; margin: 0 auto;">
-                <div class="edu-item"
-                    style="background: var(--card-bg); padding: 2.5rem; border-radius: 20px; border-left: 4px solid var(--primary-color); margin-bottom: 2rem;">
-                    <span style="color: var(--primary-color); font-weight: 600;">2021 - Present</span>
-                    <h3 style="margin: 0.5rem 0;">B.Sc. in Computer Science & Engineering</h3>
-                    <p style="color: var(--secondary-color); font-weight: 600;">University of Liberal Arts Bangladesh
-                        (ULAB)</p>
-                    <p style="margin-top: 1rem; color: #94a3b8;">Focusing on software engineering, AI, and web
-                        technologies. Actively involved in research and technical projects.</p>
+                <div class="edu-item">
+                    <span class="edu-date">2023 - Present</span>
+                    <h3>Freelance Full-Stack Developer</h3>
+                    <p class="edu-inst">Self-Employed</p>
+                    <p class="edu-desc">Designing and building responsive web applications for various clients, focusing
+                        on modern UI/UX and efficient backend solutions.</p>
                 </div>
-                <div class="edu-item"
-                    style="background: var(--card-bg); padding: 2.5rem; border-radius: 20px; border-left: 4px solid var(--secondary-color);">
-                    <span style="color: var(--secondary-color); font-weight: 600;">2023 - Present</span>
-                    <h3 style="margin: 0.5rem 0;">Freelance Full-Stack Developer</h3>
-                    <p style="color: var(--primary-color); font-weight: 600;">Self-Employed</p>
-                    <p style="margin-top: 1rem; color: #94a3b8;">Designing and building responsive web applications for
-                        various clients, focusing on modern UI/UX and efficient backend solutions.</p>
+                <div class="edu-item">
+                    <span class="edu-date">2021 - Present</span>
+                    <h3>B.Sc. in Computer Science & Engineering</h3>
+                    <p class="edu-inst">University of Liberal Arts Bangladesh (ULAB)</p>
+                    <p class="edu-desc">Focusing on software engineering, AI, and web technologies. Actively involved in
+                        research and technical projects.</p>
+                </div>
+                <div class="edu-item">
+                    <span class="edu-date">2022</span>
+                    <h3>A Level</h3>
+                    <p class="edu-desc">Advanced studies focusing on analytical and scientific disciplines.</p>
+                </div>
+                <div class="edu-item">
+                    <span class="edu-date">2019 - 2020</span>
+                    <h3>O Level</h3>
+                    <p class="edu-desc">Completed with strong academic performance in technical and core subjects.</p>
                 </div>
             </div>
         </div>
@@ -113,50 +145,47 @@
                     <i class="fab fa-python"></i>
                     <h3>Python</h3>
                 </div>
-                <div class="skill-card">
-                    <i class="fas fa-brain"></i>
-                    <h3>AI/LLMs</h3>
-                </div>
             </div>
         </div>
     </section>
 
     <section id="projects">
         <div class="container">
-            <h2 class="section-title">Recent Projects</h2>
+            <h2 class="section-title">Recent Web Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-img">
-                        <img src="https://images.unsplash.com/photo-1576091160550-217359f42f8c?auto=format&fit=crop&q=80&w=800"
-                            alt="Medical AI" style="width:100%; height:100%; object-fit:cover;">
+                        <img src="https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=800"
+                            alt="E-commerce Platform" style="width:100%; height:100%; object-fit:cover;">
                     </div>
                     <div class="project-info">
-                        <h3>Nasal Sinus Disease Segmentation</h3>
-                        <p>Advanced medical imaging analysis using deep learning for accurate disease detection and
-                            segmentation.</p>
+                        <h3>Modern E-Commerce Platform</h3>
+                        <p>Fully responsive multi-vendor marketplace featuring secure checkout, real-time inventory, and
+                            advanced search analytics.</p>
                         <a href="#" class="btn btn-primary btn-sm">Learn More</a>
                     </div>
                 </div>
                 <div class="project-card">
                     <div class="project-img">
-                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800"
-                            alt="AI Agent" style="width:100%; height:100%; object-fit:cover;">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800"
+                            alt="Corporate Website" style="width:100%; height:100%; object-fit:cover;">
                     </div>
                     <div class="project-info">
-                        <h3>StudyNet AI Agents</h3>
-                        <p>Developing intelligent study assistants and automated tutoring systems to revolutionize
-                            digital learning.</p>
+                        <h3>Corporate Branding Solutions</h3>
+                        <p>High-performance corporate web portal designed for global reach with SEO optimization and
+                            seamless CMS integration.</p>
                         <a href="#" class="btn btn-primary btn-sm">Learn More</a>
                     </div>
                 </div>
                 <div class="project-card">
                     <div class="project-img">
-                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=800"
-                            alt="Web App" style="width:100%; height:100%; object-fit:cover;">
+                        <img src="https://images.unsplash.com/photo-1611606063065-ee7946f0787a?auto=format&fit=crop&q=80&w=800"
+                            alt="Real-time Chat App" style="width:100%; height:100%; object-fit:cover;">
                     </div>
                     <div class="project-info">
-                        <h3>Personal Portfolio</h3>
-                        <p>A modern, responsive portfolio built with premium aesthetics and smooth interactions.</p>
+                        <h3>Real-time Chat Application</h3>
+                        <p>A feature-rich messaging platform featuring instant delivery, group channels, and end-to-end
+                            encrypted file sharing.</p>
                         <a href="#" class="btn btn-primary btn-sm">Learn More</a>
                     </div>
                 </div>
@@ -171,10 +200,13 @@
                 <p>I'm always open to discussing new projects, creative ideas or opportunities to be part of your
                     visions.</p>
                 <div style="margin-top: 3rem; display: flex; justify-content: center; gap: 2rem;">
-                    <a href="mailto:fahad@example.com" style="color: var(--text-color); font-size: 2rem;"><i
+                    <a href="mailto:fahad.karim.cse@ulab.edu.bd" style="color: var(--text-color); font-size: 2rem;"><i
                             class="fas fa-envelope"></i></a>
+                    <a href="https://wa.me/8801717409841" target="_blank"
+                        style="color: var(--text-color); font-size: 2rem;"><i class="fab fa-whatsapp"></i></a>
                     <a href="#" style="color: var(--text-color); font-size: 2rem;"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" style="color: var(--text-color); font-size: 2rem;"><i class="fab fa-github"></i></a>
+                    <a href="https://github.com/fahadkarimcse-oss" target="_blank"
+                        style="color: var(--text-color); font-size: 2rem;"><i class="fab fa-github"></i></a>
                 </div>
             </div>
         </div>
