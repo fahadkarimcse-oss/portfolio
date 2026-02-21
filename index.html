@@ -31,15 +31,20 @@
         </div>
     </div>
     <nav>
-        <div class="container">
+        <div class="container nav-content">
             <a href="#" class="logo">FAHAD<span>KARIM.</span></a>
-            <ul class="nav-links">
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+            <div class="nav-actions">
+                <ul class="nav-links">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button id="theme-toggle" aria-label="Toggle dark/light mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -48,7 +53,7 @@
             <div class="hero-content">
                 <p>Hi, I am</p>
                 <h1>Fahad Karim</h1>
-                <h2>Full-Stack Developer</h2>
+                <h2><span id="typing-text"></span><span class="cursor">|</span></h2>
                 <div class="hero-btns">
                     <a href="#contact" class="btn btn-primary">Hire Me</a>
                     <a href="#" class="btn btn-outline" style="margin-left: 1rem;">Download CV</a>

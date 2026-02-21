@@ -5,17 +5,47 @@
     --primary-color: #ff6a00;
     --secondary-color: #ff8c00;
     --accent-color: #ffb347;
-    --card-bg: #111111;
     --nav-bg: rgba(0, 0, 0, 0.9);
+    --section-bg: #000000;
+    --section-bg-alt: #050505;
+    --border-color: #1a1a1a;
     --font-main: 'Outfit', sans-serif;
     --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     --loader-bg: #000000;
+}
+
+.light-mode {
+    --bg-color: #ffffff;
+    --text-color: #0f172a;
+    --secondary-text: #475569;
+    --card-bg: #f8fafc;
+    --nav-bg: rgba(255, 255, 255, 0.95);
+    --section-bg: #ffffff;
+    --section-bg-alt: #f8fafc;
+    --border-color: #e2e8f0;
+    --loader-bg: #ffffff;
+}
+
+.light-mode .hero-image-backdrop {
+    background: #f1f5f9;
+}
+
+.light-mode .edu-item,
+.light-mode .project-card {
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+header,
+section,
+footer {
+    display: block;
+    clear: both;
 }
 
 body {
@@ -39,9 +69,11 @@ body {
 .section-title {
     font-size: 3rem;
     font-weight: 700;
-    margin-bottom: 4rem;
+    margin-bottom: 5rem;
     text-align: center;
     color: var(--text-color);
+    position: relative;
+    z-index: 2;
 }
 
 /* Loader Styles */
@@ -146,28 +178,43 @@ body {
     }
 }
 
-/* Navbar */
 nav {
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
-    background: transparent;
-    padding: 2rem 0;
+    padding: 1rem 0;
+    background: var(--bg-color);
+    /* Always have a background if overlapping is an issue */
+    border-bottom: 2px solid var(--border-color);
     transition: var(--transition);
 }
 
 nav.scroll {
     background: var(--nav-bg);
-    padding: 1rem 0;
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 2px solid var(--primary-color);
+    padding: 0.8rem 0;
 }
 
-nav .container {
+.nav-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+#theme-toggle {
+    background: transparent;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: var(--transition);
 }
 
 .logo {
@@ -175,7 +222,6 @@ nav .container {
     font-weight: 800;
     color: var(--primary-color);
     text-decoration: none;
-    letter-spacing: -1px;
 }
 
 .logo span {
@@ -185,29 +231,26 @@ nav .container {
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 2.5rem;
-    align-items: center;
+    gap: 2rem;
 }
 
 .nav-links a {
     text-decoration: none;
     color: var(--text-color);
     font-weight: 500;
-    font-size: 0.95rem;
     transition: var(--transition);
-}
-
-.nav-links a:hover {
-    color: var(--primary-color);
 }
 
 /* Hero Section */
 #hero {
-    min-height: 85vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
-    padding-top: 80px;
-    background: radial-gradient(circle at 80% 50%, rgba(255, 106, 0, 0.05), transparent 50%);
+    justify-content: center;
+    padding: 120px 0 80px;
+    background: radial-gradient(circle at 80% 50%, rgba(255, 106, 0, 0.1), transparent 50%);
+    position: relative;
+    z-index: 10;
 }
 
 .hero-container {
@@ -216,6 +259,8 @@ nav .container {
     justify-content: space-between;
     gap: 4rem;
     width: 100%;
+    position: relative;
+    z-index: 20;
 }
 
 .hero-content {
@@ -223,7 +268,7 @@ nav .container {
 }
 
 .hero-content h1 {
-    font-size: 4.2rem;
+    font-size: 4.5rem;
     font-weight: 800;
     line-height: 1.1;
     margin-bottom: 1.5rem;
@@ -231,17 +276,37 @@ nav .container {
 }
 
 .hero-content p {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color: var(--text-color);
     margin-bottom: 0.8rem;
-    font-weight: 300;
 }
 
 .hero-content h2 {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     font-weight: 600;
-    margin-bottom: 2.5rem;
+    margin-bottom: 3rem;
     color: var(--secondary-text);
+    display: flex;
+    align-items: center;
+    min-height: 2.5rem;
+}
+
+.cursor {
+    color: var(--primary-color);
+    animation: blink 0.7s infinite;
+    margin-left: 5px;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
 }
 
 .hero-image {
@@ -305,7 +370,7 @@ nav .container {
 .btn-outline {
     background: transparent;
     color: var(--text-color);
-    border: 2px solid #333;
+    border: 2px solid var(--border-color);
 }
 
 .btn-outline:hover {
@@ -317,13 +382,16 @@ nav .container {
 /* Education & Experience Section */
 #education {
     padding: 10rem 0;
-    background: #000;
+    background: var(--section-bg);
+    position: relative;
+    z-index: 1;
 }
 
 .edu-item {
     background: var(--card-bg);
     padding: 2.5rem;
     border-radius: 20px;
+    border: 1px solid var(--border-color);
     border-left: 4px solid var(--primary-color);
     margin-bottom: 2rem;
     transition: var(--transition);
@@ -365,8 +433,10 @@ nav .container {
 
 /* About Section */
 #about {
-    padding: 10rem 0;
-    background: #050505;
+    padding: 12rem 0;
+    background: var(--section-bg-alt);
+    position: relative;
+    z-index: 1;
 }
 
 .about-grid {
@@ -396,7 +466,7 @@ nav .container {
 /* Skills Section */
 #skills {
     padding: 10rem 0;
-    background: #000;
+    background: var(--section-bg);
 }
 
 .skills-grid {
@@ -422,13 +492,33 @@ nav .container {
 .skill-card i {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.fa-html5 {
+    color: #E34F26;
+}
+
+.fa-css3-alt {
+    color: #1572B6;
+}
+
+.fa-js {
+    color: #F7DF1E;
+}
+
+.fa-react {
+    color: #61DAFB;
+}
+
+.fa-python {
+    color: #3776AB;
 }
 
 /* Projects Section */
 #projects {
     padding: 10rem 0;
-    background: #050505;
+    background: var(--section-bg-alt);
 }
 
 .projects-grid {
@@ -441,7 +531,7 @@ nav .container {
     background: var(--card-bg);
     border-radius: 20px;
     overflow: hidden;
-    border: 1px solid #1a1a1a;
+    border: 1px solid var(--border-color);
     transition: var(--transition);
 }
 
@@ -476,7 +566,7 @@ nav .container {
 #contact {
     padding: 10rem 0;
     text-align: center;
-    background: #000;
+    background: var(--section-bg);
 }
 
 .contact-info p {
@@ -490,9 +580,9 @@ nav .container {
 footer {
     padding: 6rem 0;
     text-align: center;
-    border-top: 1px solid #111;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
     color: var(--secondary-text);
-    background: #000;
+    background: var(--section-bg);
 }
 
 /* Responsive */
